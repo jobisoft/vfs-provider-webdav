@@ -1,0 +1,216 @@
+{
+  "extensionName": {
+    "message": "VFS-Provider: WebDAV"
+  },
+  "extensionDescription": {
+    "message": "Провайдер хранилища WebDAV для VFS Toolkit."
+  },
+  "setupTitle": {
+    "message": "Подключиться к WebDAV"
+  },
+  "setupSubtitleDefaultAddon": {
+    "message": "Дополнение"
+  },
+  "setupSubtitleSuffix": {
+    "message": " хочет подключиться к серверу WebDAV."
+  },
+  "setupLabelServer": {
+    "message": "URL сервера"
+  },
+  "setupPlaceholderServer": {
+    "message": "https://cloud.example.com"
+  },
+  "setupLabelUsername": {
+    "message": "Имя пользователя"
+  },
+  "setupLabelPassword": {
+    "message": "Пароль"
+  },
+  "setupLabelConnName": {
+    "message": "Имя подключения"
+  },
+  "setupBtnConnect": {
+    "message": "Подключить"
+  },
+  "setupBtnCreateAndConnect": {
+    "message": "Создать аккаунт и подключиться"
+  },
+  "setupBtnCancel": {
+    "message": "Отмена"
+  },
+  "setupStatusDiscovering": {
+    "message": "Обнаружение ресурсов WebDAV…"
+  },
+  "setupErrorAuth": {
+    "message": "Ошибка аутентификации. Проверьте имя пользователя и пароль."
+  },
+  "setupErrorNoEndpoint": {
+    "message": "WebDAV-конечная точка не найдена по указанному URL сервера.\nПопробуйте ввести полный URL конечной точки напрямую (например, https://cloud.example.com/remote.php/dav/files/user/)."
+  },
+  "configTitle": {
+    "message": "Настройки WebDAV"
+  },
+  "configLabelConnName": {
+    "message": "Имя подключения"
+  },
+  "configHintConnName": {
+    "message": "Метка, отображаемая в выборщике хранилища."
+  },
+  "configLabelUrl": {
+    "message": "URL конечной точки WebDAV"
+  },
+  "configHintUrl": {
+    "message": "Полный URL с путём, например https://cloud.example.com/remote.php/dav/files/alice/"
+  },
+  "configLabelUsername": {
+    "message": "Имя пользователя"
+  },
+  "configLabelPassword": {
+    "message": "Пароль"
+  },
+  "configLabelPollInterval": {
+    "message": "Интервал обнаружения изменений (секунды)"
+  },
+  "configHintPollInterval": {
+    "message": "Как часто опрашивать сервер на предмет внешних изменений. Установите 0 для отключения."
+  },
+  "configBtnSave": {
+    "message": "Сохранить"
+  },
+  "configBtnTest": {
+    "message": "Проверить подключение"
+  },
+  "configStatusTesting": {
+    "message": "Проверка…"
+  },
+  "configStatusAuthFailed": {
+    "message": "Ошибка аутентификации."
+  },
+  "configStatusOk": {
+    "message": "Подключение успешно."
+  },
+  "configStatusHttpError": {
+    "message": "Сервер вернул HTTP $STATUS$.",
+    "placeholders": {
+      "status": {
+        "content": "$1"
+      }
+    }
+  },
+  "configStatusSaveFailed": {
+    "message": "Не удалось сохранить настройки."
+  },
+  "configStatusSaved": {
+    "message": "Настройки сохранены."
+  },
+  "fallbackConnName": {
+    "message": "WebDAV ($USER$)",
+    "placeholders": {
+      "user": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorUnknownConnection": {
+    "message": "Неизвестное подключение"
+  },
+  "errorFolderExists": {
+    "message": "Папка уже существует"
+  },
+  "errorFileExists": {
+    "message": "Файл уже существует"
+  },
+  "errorHttp": {
+    "message": "WebDAV HTTP $STATUS$",
+    "placeholders": {
+      "status": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorConflictTitle": {
+    "message": "Конфликт"
+  },
+  "errorConflictDescription": {
+    "message": "Родительский каталог не существует на сервере."
+  },
+  "errorHttpTitle": {
+    "message": "Ошибка сервера ($STATUS$)",
+    "placeholders": {
+      "status": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorHttpDescription": {
+    "message": "Сервер WebDAV вернул неожиданный ответ HTTP $STATUS$.",
+    "placeholders": {
+      "status": {
+        "content": "$1"
+      }
+    }
+  },
+  "setupReuseLabel": {
+    "message": "Использовать существующий аккаунт"
+  },
+  "setupReuseNew": {
+    "message": "- Создать новый аккаунт -"
+  },
+  "optionsPageTitle": {
+    "message": "Аккаунты и подключения WebDAV"
+  },
+  "optionsPageSubtitle": {
+    "message": "Управляйте аккаунтами WebDAV и подключениями дополнений, которые их используют."
+  },
+  "optionsAccountsHeading": {
+    "message": "Аккаунты"
+  },
+  "optionsThAccount": {
+    "message": "Аккаунт"
+  },
+  "optionsAccountsEmpty": {
+    "message": "Нет аккаунтов."
+  },
+  "optionsBtnAddAccount": {
+    "message": "Добавить аккаунт"
+  },
+  "optionsAddAccountTitle": {
+    "message": "Добавить аккаунт WebDAV"
+  },
+  "optionsLabelAccountName": {
+    "message": "Имя аккаунта"
+  },
+  "optionsAccountNotice": {
+    "message": "Аккаунты можно заранее создать здесь или добавить через дополнение в процессе настройки. Дополнения могут повторно использовать любой существующий аккаунт при подключении. Удаление аккаунта стирает сохранённые учётные данные и отзывает доступ для всех подключений, использующих его."
+  },
+  "btnDelete": {
+    "message": "Удалить"
+  },
+  "optionsGrantedHeading": {
+    "message": "Активные подключения"
+  },
+  "optionsThConnection": {
+    "message": "Подключение"
+  },
+  "btnRevoke": {
+    "message": "Отозвать"
+  },
+  "optionsEmptyState": {
+    "message": "Нет активных подключений."
+  },
+  "optionsNotice": {
+    "message": "Отзыв подключения лишает дополнение доступа к связанному аккаунту у данного провайдера."
+  },
+  "optionsErrorAccountExists": {
+    "message": "Аккаунт для этого сервера и имени пользователя уже существует."
+  },
+  "optionsConnAccount": {
+    "message": "Имя аккаунта:"
+  },
+  "optionsConnExtension": {
+    "message": "Имя дополнения:"
+  },
+  "optionsPlaceholderAccountName": {
+    "message": "Личный аккаунт WebDAV"
+  }
+}

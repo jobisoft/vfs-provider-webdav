@@ -1,0 +1,216 @@
+{
+  "extensionName": {
+    "message": "VFS-Provider: WebDAV"
+  },
+  "extensionDescription": {
+    "message": "VFS Toolkit 用 WebDAV ストレージプロバイダー。"
+  },
+  "setupTitle": {
+    "message": "WebDAV に接続"
+  },
+  "setupSubtitleDefaultAddon": {
+    "message": "アドオン"
+  },
+  "setupSubtitleSuffix": {
+    "message": " が WebDAV サーバーへの接続を要求しています。"
+  },
+  "setupLabelServer": {
+    "message": "サーバー URL"
+  },
+  "setupPlaceholderServer": {
+    "message": "https://cloud.example.com"
+  },
+  "setupLabelUsername": {
+    "message": "ユーザー名"
+  },
+  "setupLabelPassword": {
+    "message": "パスワード"
+  },
+  "setupLabelConnName": {
+    "message": "接続名"
+  },
+  "setupBtnConnect": {
+    "message": "接続"
+  },
+  "setupBtnCreateAndConnect": {
+    "message": "アカウントを作成して接続"
+  },
+  "setupBtnCancel": {
+    "message": "キャンセル"
+  },
+  "setupStatusDiscovering": {
+    "message": "WebDAV リソースを検索中…"
+  },
+  "setupErrorAuth": {
+    "message": "認証に失敗しました。ユーザー名とパスワードを確認してください。"
+  },
+  "setupErrorNoEndpoint": {
+    "message": "指定されたサーバー URL に WebDAV エンドポイントが見つかりませんでした。\nエンドポイントの完全な URL を直接入力してみてください（例: https://cloud.example.com/remote.php/dav/files/user/）。"
+  },
+  "configTitle": {
+    "message": "WebDAV 設定"
+  },
+  "configLabelConnName": {
+    "message": "接続名"
+  },
+  "configHintConnName": {
+    "message": "ストレージピッカーに表示されるラベル。"
+  },
+  "configLabelUrl": {
+    "message": "WebDAV エンドポイント URL"
+  },
+  "configHintUrl": {
+    "message": "パスを含む完全な URL（例: https://cloud.example.com/remote.php/dav/files/alice/）"
+  },
+  "configLabelUsername": {
+    "message": "ユーザー名"
+  },
+  "configLabelPassword": {
+    "message": "パスワード"
+  },
+  "configLabelPollInterval": {
+    "message": "変更検出間隔（秒）"
+  },
+  "configHintPollInterval": {
+    "message": "外部変更のためにサーバーをポーリングする頻度。0 で無効化。"
+  },
+  "configBtnSave": {
+    "message": "保存"
+  },
+  "configBtnTest": {
+    "message": "接続をテスト"
+  },
+  "configStatusTesting": {
+    "message": "テスト中…"
+  },
+  "configStatusAuthFailed": {
+    "message": "認証に失敗しました。"
+  },
+  "configStatusOk": {
+    "message": "接続に成功しました。"
+  },
+  "configStatusHttpError": {
+    "message": "サーバーが HTTP $STATUS$ を返しました。",
+    "placeholders": {
+      "status": {
+        "content": "$1"
+      }
+    }
+  },
+  "configStatusSaveFailed": {
+    "message": "設定の保存に失敗しました。"
+  },
+  "configStatusSaved": {
+    "message": "設定を保存しました。"
+  },
+  "fallbackConnName": {
+    "message": "WebDAV ($USER$)",
+    "placeholders": {
+      "user": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorUnknownConnection": {
+    "message": "不明な接続"
+  },
+  "errorFolderExists": {
+    "message": "フォルダーはすでに存在します"
+  },
+  "errorFileExists": {
+    "message": "ファイルはすでに存在します"
+  },
+  "errorHttp": {
+    "message": "WebDAV HTTP $STATUS$",
+    "placeholders": {
+      "status": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorConflictTitle": {
+    "message": "競合"
+  },
+  "errorConflictDescription": {
+    "message": "親ディレクトリがサーバーに存在しません。"
+  },
+  "errorHttpTitle": {
+    "message": "サーバーエラー ($STATUS$)",
+    "placeholders": {
+      "status": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorHttpDescription": {
+    "message": "WebDAV サーバーが予期しない HTTP $STATUS$ レスポンスを返しました。",
+    "placeholders": {
+      "status": {
+        "content": "$1"
+      }
+    }
+  },
+  "setupReuseLabel": {
+    "message": "既存のアカウントを使用"
+  },
+  "setupReuseNew": {
+    "message": "- 新しいアカウントを作成 -"
+  },
+  "optionsPageTitle": {
+    "message": "WebDAV アカウントと接続"
+  },
+  "optionsPageSubtitle": {
+    "message": "WebDAV アカウントとそれを使用するアドオン接続を管理します。"
+  },
+  "optionsAccountsHeading": {
+    "message": "アカウント"
+  },
+  "optionsThAccount": {
+    "message": "アカウント"
+  },
+  "optionsAccountsEmpty": {
+    "message": "アカウントはありません。"
+  },
+  "optionsBtnAddAccount": {
+    "message": "アカウントを追加"
+  },
+  "optionsAddAccountTitle": {
+    "message": "WebDAV アカウントを追加"
+  },
+  "optionsLabelAccountName": {
+    "message": "アカウント名"
+  },
+  "optionsAccountNotice": {
+    "message": "アカウントはここで事前に作成するか、アドオンのセットアップ中に追加することができます。アドオンは接続時に既存のアカウントを再利用できます。アカウントを削除すると、保存された認証情報が削除され、それを使用するすべての接続のアクセスが取り消されます。"
+  },
+  "btnDelete": {
+    "message": "削除"
+  },
+  "optionsGrantedHeading": {
+    "message": "アクティブな接続"
+  },
+  "optionsThConnection": {
+    "message": "接続"
+  },
+  "btnRevoke": {
+    "message": "取り消す"
+  },
+  "optionsEmptyState": {
+    "message": "アクティブな接続はありません。"
+  },
+  "optionsNotice": {
+    "message": "接続を取り消すと、このプロバイダー上の関連アカウントへのアドオンのアクセスが削除されます。"
+  },
+  "optionsErrorAccountExists": {
+    "message": "このサーバーとユーザー名のアカウントはすでに存在します。"
+  },
+  "optionsConnAccount": {
+    "message": "アカウント名:"
+  },
+  "optionsConnExtension": {
+    "message": "アドオン名:"
+  },
+  "optionsPlaceholderAccountName": {
+    "message": "個人用 WebDAV アカウント"
+  }
+}

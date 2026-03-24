@@ -1,0 +1,216 @@
+{
+  "extensionName": {
+    "message": "VFS-Provider: WebDAV"
+  },
+  "extensionDescription": {
+    "message": "WebDAV tárhelyszolgáltató a VFS Toolkithez."
+  },
+  "setupTitle": {
+    "message": "Csatlakozás WebDAV-hoz"
+  },
+  "setupSubtitleDefaultAddon": {
+    "message": "Egy bővítmény"
+  },
+  "setupSubtitleSuffix": {
+    "message": " WebDAV-kiszolgálóhoz szeretne csatlakozni."
+  },
+  "setupLabelServer": {
+    "message": "Kiszolgáló URL"
+  },
+  "setupPlaceholderServer": {
+    "message": "https://cloud.example.com"
+  },
+  "setupLabelUsername": {
+    "message": "Felhasználónév"
+  },
+  "setupLabelPassword": {
+    "message": "Jelszó"
+  },
+  "setupLabelConnName": {
+    "message": "Kapcsolat neve"
+  },
+  "setupBtnConnect": {
+    "message": "Csatlakozás"
+  },
+  "setupBtnCreateAndConnect": {
+    "message": "Fiók létrehozása és csatlakozás"
+  },
+  "setupBtnCancel": {
+    "message": "Mégse"
+  },
+  "setupStatusDiscovering": {
+    "message": "WebDAV-erőforrások felderítése…"
+  },
+  "setupErrorAuth": {
+    "message": "Hitelesítés sikertelen. Kérjük, ellenőrizze felhasználónevét és jelszavát."
+  },
+  "setupErrorNoEndpoint": {
+    "message": "Nem található WebDAV-végpont a megadott kiszolgáló URL-en.\nPróbálja meg közvetlenül megadni a teljes végpont URL-t (pl. https://cloud.example.com/remote.php/dav/files/user/)."
+  },
+  "configTitle": {
+    "message": "WebDAV beállítások"
+  },
+  "configLabelConnName": {
+    "message": "Kapcsolat neve"
+  },
+  "configHintConnName": {
+    "message": "A tárolóválasztóban megjelenő felirat."
+  },
+  "configLabelUrl": {
+    "message": "WebDAV-végpont URL"
+  },
+  "configHintUrl": {
+    "message": "Teljes URL az elérési úttal, pl. https://cloud.example.com/remote.php/dav/files/alice/"
+  },
+  "configLabelUsername": {
+    "message": "Felhasználónév"
+  },
+  "configLabelPassword": {
+    "message": "Jelszó"
+  },
+  "configLabelPollInterval": {
+    "message": "Változásészlelési időköz (másodperc)"
+  },
+  "configHintPollInterval": {
+    "message": "Milyen gyakran kérdezze le a kiszolgálót a külső módosítások után. 0 a letiltáshoz."
+  },
+  "configBtnSave": {
+    "message": "Mentés"
+  },
+  "configBtnTest": {
+    "message": "Kapcsolat tesztelése"
+  },
+  "configStatusTesting": {
+    "message": "Tesztelés…"
+  },
+  "configStatusAuthFailed": {
+    "message": "Hitelesítés sikertelen."
+  },
+  "configStatusOk": {
+    "message": "Kapcsolat sikeres."
+  },
+  "configStatusHttpError": {
+    "message": "A kiszolgáló HTTP $STATUS$ választ adott.",
+    "placeholders": {
+      "status": {
+        "content": "$1"
+      }
+    }
+  },
+  "configStatusSaveFailed": {
+    "message": "A beállítások mentése sikertelen."
+  },
+  "configStatusSaved": {
+    "message": "Beállítások mentve."
+  },
+  "fallbackConnName": {
+    "message": "WebDAV ($USER$)",
+    "placeholders": {
+      "user": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorUnknownConnection": {
+    "message": "Ismeretlen kapcsolat"
+  },
+  "errorFolderExists": {
+    "message": "A mappa már létezik"
+  },
+  "errorFileExists": {
+    "message": "A fájl már létezik"
+  },
+  "errorHttp": {
+    "message": "WebDAV HTTP $STATUS$",
+    "placeholders": {
+      "status": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorConflictTitle": {
+    "message": "Ütközés"
+  },
+  "errorConflictDescription": {
+    "message": "A szülőkönyvtár nem létezik a kiszolgálón."
+  },
+  "errorHttpTitle": {
+    "message": "Kiszolgálóhiba ($STATUS$)",
+    "placeholders": {
+      "status": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorHttpDescription": {
+    "message": "A WebDAV-kiszolgáló váratlan HTTP $STATUS$ választ adott.",
+    "placeholders": {
+      "status": {
+        "content": "$1"
+      }
+    }
+  },
+  "setupReuseLabel": {
+    "message": "Meglévő fiók használata"
+  },
+  "setupReuseNew": {
+    "message": "- Új fiók létrehozása -"
+  },
+  "optionsPageTitle": {
+    "message": "WebDAV-fiókok és kapcsolatok"
+  },
+  "optionsPageSubtitle": {
+    "message": "WebDAV-fiókok és az azokat használó bővítménykapcsolatok kezelése."
+  },
+  "optionsAccountsHeading": {
+    "message": "Fiókok"
+  },
+  "optionsThAccount": {
+    "message": "Fiók"
+  },
+  "optionsAccountsEmpty": {
+    "message": "Nincsenek fiókok."
+  },
+  "optionsBtnAddAccount": {
+    "message": "Fiók hozzáadása"
+  },
+  "optionsAddAccountTitle": {
+    "message": "WebDAV-fiók hozzáadása"
+  },
+  "optionsLabelAccountName": {
+    "message": "Fiók neve"
+  },
+  "optionsAccountNotice": {
+    "message": "A fiókok itt előre létrehozhatók, vagy egy bővítmény is hozzáadhatja őket a beállítás során. A bővítmények csatlakozáskor bármely meglévő fiókot újra felhasználhatják. Egy fiók eltávolítása törli a tárolt hitelesítési adatokat, és visszavonja az összes azt használó kapcsolat hozzáférését."
+  },
+  "btnDelete": {
+    "message": "Törlés"
+  },
+  "optionsGrantedHeading": {
+    "message": "Aktív kapcsolatok"
+  },
+  "optionsThConnection": {
+    "message": "Kapcsolat"
+  },
+  "btnRevoke": {
+    "message": "Visszavonás"
+  },
+  "optionsEmptyState": {
+    "message": "Nincsenek aktív kapcsolatok."
+  },
+  "optionsNotice": {
+    "message": "Egy kapcsolat visszavonása megszünteti a bővítmény hozzáférését a társított fiókhoz ennél a szolgáltatónál."
+  },
+  "optionsErrorAccountExists": {
+    "message": "Ehhez a kiszolgálóhoz és felhasználónévhez már létezik egy fiók."
+  },
+  "optionsConnAccount": {
+    "message": "Fiók neve:"
+  },
+  "optionsConnExtension": {
+    "message": "Bővítmény neve:"
+  },
+  "optionsPlaceholderAccountName": {
+    "message": "Személyes WebDAV-fiók"
+  }
+}

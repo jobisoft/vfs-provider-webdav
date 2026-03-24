@@ -1,0 +1,216 @@
+{
+  "extensionName": {
+    "message": "VFS-Provider: WebDAV"
+  },
+  "extensionDescription": {
+    "message": "Poskytovatel úložiště WebDAV pro VFS Toolkit."
+  },
+  "setupTitle": {
+    "message": "Připojit k WebDAV"
+  },
+  "setupSubtitleDefaultAddon": {
+    "message": "Doplněk"
+  },
+  "setupSubtitleSuffix": {
+    "message": " se chce připojit k serveru WebDAV."
+  },
+  "setupLabelServer": {
+    "message": "URL serveru"
+  },
+  "setupPlaceholderServer": {
+    "message": "https://cloud.example.com"
+  },
+  "setupLabelUsername": {
+    "message": "Uživatelské jméno"
+  },
+  "setupLabelPassword": {
+    "message": "Heslo"
+  },
+  "setupLabelConnName": {
+    "message": "Název připojení"
+  },
+  "setupBtnConnect": {
+    "message": "Připojit"
+  },
+  "setupBtnCreateAndConnect": {
+    "message": "Vytvořit účet a připojit"
+  },
+  "setupBtnCancel": {
+    "message": "Zrušit"
+  },
+  "setupStatusDiscovering": {
+    "message": "Zjišťování prostředků WebDAV…"
+  },
+  "setupErrorAuth": {
+    "message": "Ověření selhalo. Zkontrolujte prosím uživatelské jméno a heslo."
+  },
+  "setupErrorNoEndpoint": {
+    "message": "Na zadané URL serveru nebyl nalezen žádný koncový bod WebDAV.\nZkuste zadat úplnou URL koncového bodu přímo (např. https://cloud.example.com/remote.php/dav/files/user/)."
+  },
+  "configTitle": {
+    "message": "Nastavení WebDAV"
+  },
+  "configLabelConnName": {
+    "message": "Název připojení"
+  },
+  "configHintConnName": {
+    "message": "Označení zobrazené ve výběru úložiště."
+  },
+  "configLabelUrl": {
+    "message": "URL koncového bodu WebDAV"
+  },
+  "configHintUrl": {
+    "message": "Úplná URL včetně cesty, např. https://cloud.example.com/remote.php/dav/files/alice/"
+  },
+  "configLabelUsername": {
+    "message": "Uživatelské jméno"
+  },
+  "configLabelPassword": {
+    "message": "Heslo"
+  },
+  "configLabelPollInterval": {
+    "message": "Interval zjišťování změn (sekundy)"
+  },
+  "configHintPollInterval": {
+    "message": "Jak často se server dotazuje na externí změny. Nastavte na 0 pro deaktivaci."
+  },
+  "configBtnSave": {
+    "message": "Uložit"
+  },
+  "configBtnTest": {
+    "message": "Otestovat připojení"
+  },
+  "configStatusTesting": {
+    "message": "Testování…"
+  },
+  "configStatusAuthFailed": {
+    "message": "Ověření selhalo."
+  },
+  "configStatusOk": {
+    "message": "Připojení úspěšné."
+  },
+  "configStatusHttpError": {
+    "message": "Server vrátil HTTP $STATUS$.",
+    "placeholders": {
+      "status": {
+        "content": "$1"
+      }
+    }
+  },
+  "configStatusSaveFailed": {
+    "message": "Nastavení se nepodařilo uložit."
+  },
+  "configStatusSaved": {
+    "message": "Nastavení uloženo."
+  },
+  "fallbackConnName": {
+    "message": "WebDAV ($USER$)",
+    "placeholders": {
+      "user": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorUnknownConnection": {
+    "message": "Neznámé připojení"
+  },
+  "errorFolderExists": {
+    "message": "Složka již existuje"
+  },
+  "errorFileExists": {
+    "message": "Soubor již existuje"
+  },
+  "errorHttp": {
+    "message": "WebDAV HTTP $STATUS$",
+    "placeholders": {
+      "status": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorConflictTitle": {
+    "message": "Konflikt"
+  },
+  "errorConflictDescription": {
+    "message": "Nadřazený adresář na serveru neexistuje."
+  },
+  "errorHttpTitle": {
+    "message": "Chyba serveru ($STATUS$)",
+    "placeholders": {
+      "status": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorHttpDescription": {
+    "message": "Server WebDAV vrátil neočekávanou odpověď HTTP $STATUS$.",
+    "placeholders": {
+      "status": {
+        "content": "$1"
+      }
+    }
+  },
+  "setupReuseLabel": {
+    "message": "Použít existující účet"
+  },
+  "setupReuseNew": {
+    "message": "- Vytvořit nový účet -"
+  },
+  "optionsPageTitle": {
+    "message": "Účty a připojení WebDAV"
+  },
+  "optionsPageSubtitle": {
+    "message": "Spravujte účty WebDAV a připojení doplňků, která je využívají."
+  },
+  "optionsAccountsHeading": {
+    "message": "Účty"
+  },
+  "optionsThAccount": {
+    "message": "Účet"
+  },
+  "optionsAccountsEmpty": {
+    "message": "Žádné účty."
+  },
+  "optionsBtnAddAccount": {
+    "message": "Přidat účet"
+  },
+  "optionsAddAccountTitle": {
+    "message": "Přidat účet WebDAV"
+  },
+  "optionsLabelAccountName": {
+    "message": "Název účtu"
+  },
+  "optionsAccountNotice": {
+    "message": "Účty lze předem vytvořit zde nebo je může přidat doplněk během instalace. Doplňky mohou při připojení znovu použít libovolný existující účet. Odebrání účtu smaže uložené přihlašovací údaje a zruší přístup všem připojením, která jej používají."
+  },
+  "btnDelete": {
+    "message": "Smazat"
+  },
+  "optionsGrantedHeading": {
+    "message": "Aktivní připojení"
+  },
+  "optionsThConnection": {
+    "message": "Připojení"
+  },
+  "btnRevoke": {
+    "message": "Odvolat"
+  },
+  "optionsEmptyState": {
+    "message": "Žádná aktivní připojení."
+  },
+  "optionsNotice": {
+    "message": "Odvoláním připojení odeberete doplňku přístup k přidruženému účtu u tohoto poskytovatele."
+  },
+  "optionsErrorAccountExists": {
+    "message": "Účet pro tento server a uživatelské jméno již existuje."
+  },
+  "optionsConnAccount": {
+    "message": "Název účtu:"
+  },
+  "optionsConnExtension": {
+    "message": "Název doplňku:"
+  },
+  "optionsPlaceholderAccountName": {
+    "message": "Osobní účet WebDAV"
+  }
+}

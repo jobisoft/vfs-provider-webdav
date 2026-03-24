@@ -1,0 +1,216 @@
+{
+  "extensionName": {
+    "message": "VFS-Provider: WebDAV"
+  },
+  "extensionDescription": {
+    "message": "WebDAV-lagringsleverantör för VFS Toolkit."
+  },
+  "setupTitle": {
+    "message": "Anslut till WebDAV"
+  },
+  "setupSubtitleDefaultAddon": {
+    "message": "Ett tillägg"
+  },
+  "setupSubtitleSuffix": {
+    "message": " vill ansluta till en WebDAV-server."
+  },
+  "setupLabelServer": {
+    "message": "Server-URL"
+  },
+  "setupPlaceholderServer": {
+    "message": "https://cloud.example.com"
+  },
+  "setupLabelUsername": {
+    "message": "Användarnamn"
+  },
+  "setupLabelPassword": {
+    "message": "Lösenord"
+  },
+  "setupLabelConnName": {
+    "message": "Anslutningsnamn"
+  },
+  "setupBtnConnect": {
+    "message": "Anslut"
+  },
+  "setupBtnCreateAndConnect": {
+    "message": "Skapa konto och anslut"
+  },
+  "setupBtnCancel": {
+    "message": "Avbryt"
+  },
+  "setupStatusDiscovering": {
+    "message": "Identifierar WebDAV-resurser…"
+  },
+  "setupErrorAuth": {
+    "message": "Autentisering misslyckades. Kontrollera ditt användarnamn och lösenord."
+  },
+  "setupErrorNoEndpoint": {
+    "message": "Inget WebDAV-slutpunkt hittades på den angivna server-URL:en.\nFörsök att ange den fullständiga slutpunktens URL direkt (t.ex. https://cloud.example.com/remote.php/dav/files/user/)."
+  },
+  "configTitle": {
+    "message": "WebDAV-inställningar"
+  },
+  "configLabelConnName": {
+    "message": "Anslutningsnamn"
+  },
+  "configHintConnName": {
+    "message": "Etikett som visas i lagringsväljaren."
+  },
+  "configLabelUrl": {
+    "message": "WebDAV-slutpunktens URL"
+  },
+  "configHintUrl": {
+    "message": "Fullständig URL med sökväg, t.ex. https://cloud.example.com/remote.php/dav/files/alice/"
+  },
+  "configLabelUsername": {
+    "message": "Användarnamn"
+  },
+  "configLabelPassword": {
+    "message": "Lösenord"
+  },
+  "configLabelPollInterval": {
+    "message": "Ändringsdetekteringsintervall (sekunder)"
+  },
+  "configHintPollInterval": {
+    "message": "Hur ofta servern avsöks efter externa ändringar. Ange 0 för att inaktivera."
+  },
+  "configBtnSave": {
+    "message": "Spara"
+  },
+  "configBtnTest": {
+    "message": "Testa anslutning"
+  },
+  "configStatusTesting": {
+    "message": "Testar…"
+  },
+  "configStatusAuthFailed": {
+    "message": "Autentisering misslyckades."
+  },
+  "configStatusOk": {
+    "message": "Anslutningen lyckades."
+  },
+  "configStatusHttpError": {
+    "message": "Servern returnerade HTTP $STATUS$.",
+    "placeholders": {
+      "status": {
+        "content": "$1"
+      }
+    }
+  },
+  "configStatusSaveFailed": {
+    "message": "Det gick inte att spara inställningarna."
+  },
+  "configStatusSaved": {
+    "message": "Inställningarna sparades."
+  },
+  "fallbackConnName": {
+    "message": "WebDAV ($USER$)",
+    "placeholders": {
+      "user": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorUnknownConnection": {
+    "message": "Okänd anslutning"
+  },
+  "errorFolderExists": {
+    "message": "Mappen finns redan"
+  },
+  "errorFileExists": {
+    "message": "Filen finns redan"
+  },
+  "errorHttp": {
+    "message": "WebDAV HTTP $STATUS$",
+    "placeholders": {
+      "status": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorConflictTitle": {
+    "message": "Konflikt"
+  },
+  "errorConflictDescription": {
+    "message": "Föräldrakatalogen finns inte på servern."
+  },
+  "errorHttpTitle": {
+    "message": "Serverfel ($STATUS$)",
+    "placeholders": {
+      "status": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorHttpDescription": {
+    "message": "WebDAV-servern returnerade ett oväntat HTTP $STATUS$-svar.",
+    "placeholders": {
+      "status": {
+        "content": "$1"
+      }
+    }
+  },
+  "setupReuseLabel": {
+    "message": "Använd ett befintligt konto"
+  },
+  "setupReuseNew": {
+    "message": "- Skapa nytt konto -"
+  },
+  "optionsPageTitle": {
+    "message": "WebDAV-konton och anslutningar"
+  },
+  "optionsPageSubtitle": {
+    "message": "Hantera WebDAV-konton och de tilläggsanslutningar som använder dem."
+  },
+  "optionsAccountsHeading": {
+    "message": "Konton"
+  },
+  "optionsThAccount": {
+    "message": "Konto"
+  },
+  "optionsAccountsEmpty": {
+    "message": "Inga konton."
+  },
+  "optionsBtnAddAccount": {
+    "message": "Lägg till konto"
+  },
+  "optionsAddAccountTitle": {
+    "message": "Lägg till WebDAV-konto"
+  },
+  "optionsLabelAccountName": {
+    "message": "Kontonamn"
+  },
+  "optionsAccountNotice": {
+    "message": "Konton kan skapas i förväg här eller läggas till av ett tillägg under inställningsflödet. Tillägg kan återanvända vilket befintligt konto som helst vid anslutning. Om ett konto tas bort raderas dess lagrade inloggningsuppgifter och åtkomsten återkallas för alla anslutningar som använder det."
+  },
+  "btnDelete": {
+    "message": "Ta bort"
+  },
+  "optionsGrantedHeading": {
+    "message": "Aktiva anslutningar"
+  },
+  "optionsThConnection": {
+    "message": "Anslutning"
+  },
+  "btnRevoke": {
+    "message": "Återkalla"
+  },
+  "optionsEmptyState": {
+    "message": "Inga aktiva anslutningar."
+  },
+  "optionsNotice": {
+    "message": "Att återkalla en anslutning tar bort tilläggets åtkomst till det tillhörande kontot hos denna leverantör."
+  },
+  "optionsErrorAccountExists": {
+    "message": "Det finns redan ett konto för den här servern och det här användarnamnet."
+  },
+  "optionsConnAccount": {
+    "message": "Kontonamn:"
+  },
+  "optionsConnExtension": {
+    "message": "Tilläggsnamn:"
+  },
+  "optionsPlaceholderAccountName": {
+    "message": "Personligt WebDAV-konto"
+  }
+}

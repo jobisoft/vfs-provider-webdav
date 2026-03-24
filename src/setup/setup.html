@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <script src="setup.js" type="module"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, sans-serif;
+      margin: 0;
+      padding: 20px;
+      font-size: 13px;
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    h2 {
+      margin: 0 0 4px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #1e293b;
+    }
+
+    .subtitle {
+      color: #64748b;
+      margin: 0 0 18px;
+      font-size: 12px;
+    }
+
+    label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 4px;
+      color: #334155;
+    }
+
+    input[type="text"],
+    input[type="url"],
+    input[type="password"] {
+      width: 100%;
+      padding: 6px 8px;
+      border: 1px solid #cbd5e1;
+      border-radius: 4px;
+      font-size: 13px;
+      margin-bottom: 12px;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 2px #bfdbfe;
+    }
+
+    select {
+      width: 100%;
+      padding: 6px 8px;
+      border: 1px solid #cbd5e1;
+      border-radius: 4px;
+      font-size: 13px;
+      margin-bottom: 12px;
+      outline: none;
+      background: white;
+    }
+
+    select:focus {
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 2px #bfdbfe;
+    }
+
+    #account-section {
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .row {
+      display: flex;
+      gap: 8px;
+      margin-top: auto;
+      padding-top: 16px;
+      justify-content: flex-end;
+    }
+
+    button {
+      padding: 6px 16px;
+      background: #2563eb;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    button:hover:not(:disabled) {
+      background: #1d4ed8;
+    }
+
+    button:disabled {
+      opacity: 0.5;
+      cursor: default;
+    }
+
+    button.cancel {
+      background: #dc2626;
+      color: #fff;
+      border: none;
+    }
+
+    button.cancel:hover:not(:disabled) {
+      background: #b91c1c;
+    }
+
+    #status {
+      margin-top: 10px;
+      font-size: 12px;
+      min-height: 16px;
+      overflow-wrap: break-word;
+    }
+
+    #status.ok    { color: #16a34a; }
+    #status.error { color: #dc2626; }
+    #status.info  { color: #2563eb; }
+  </style>
+</head>
+
+<body>
+  <h2 data-i18n-content="setupTitle"></h2>
+  <p class="subtitle"><strong id="addon-name"></strong><span data-i18n-content="setupSubtitleSuffix"></span></p>
+
+  <div id="account-section" hidden>
+    <label for="account-select" data-i18n-content="setupReuseLabel"></label>
+    <select id="account-select">
+      <option value="" data-i18n-content="setupReuseNew"></option>
+    </select>
+  </div>
+
+  <label for="conn-name" data-i18n-content="setupLabelConnName"></label>
+  <input id="conn-name" type="text" />
+
+  <div id="new-account-form">
+    <label for="server" data-i18n-content="setupLabelServer"></label>
+    <input id="server" type="url" data-i18n-placeholder="setupPlaceholderServer" autocomplete="off" spellcheck="false" />
+
+    <label for="username" data-i18n-content="setupLabelUsername"></label>
+    <input id="username" type="text" autocomplete="username" />
+
+    <label for="password" data-i18n-content="setupLabelPassword"></label>
+    <input id="password" type="password" autocomplete="current-password" />
+  </div>
+
+  <div id="status"></div>
+
+  <div class="row">
+    <button id="connect-btn" data-i18n-content="setupBtnCreateAndConnect"></button>
+    <button class="cancel" id="cancel-btn" data-i18n-content="setupBtnCancel"></button>
+  </div>
+</body>
+
+</html>

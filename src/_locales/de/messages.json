@@ -1,0 +1,216 @@
+{
+  "extensionName": {
+    "message": "VFS-Provider: WebDAV"
+  },
+  "extensionDescription": {
+    "message": "WebDAV-Speicheranbieter für das VFS Toolkit."
+  },
+  "setupTitle": {
+    "message": "Mit WebDAV verbinden"
+  },
+  "setupSubtitleDefaultAddon": {
+    "message": "Ein Add-on"
+  },
+  "setupSubtitleSuffix": {
+    "message": " möchte eine Verbindung zu einem WebDAV-Server herstellen."
+  },
+  "setupLabelServer": {
+    "message": "Server-URL"
+  },
+  "setupPlaceholderServer": {
+    "message": "https://cloud.example.com"
+  },
+  "setupLabelUsername": {
+    "message": "Benutzername"
+  },
+  "setupLabelPassword": {
+    "message": "Passwort"
+  },
+  "setupLabelConnName": {
+    "message": "Verbindungsname"
+  },
+  "setupBtnConnect": {
+    "message": "Verbinden"
+  },
+  "setupBtnCreateAndConnect": {
+    "message": "Konto erstellen & verbinden"
+  },
+  "setupBtnCancel": {
+    "message": "Abbrechen"
+  },
+  "setupStatusDiscovering": {
+    "message": "WebDAV-Ressourcen werden erkundet…"
+  },
+  "setupErrorAuth": {
+    "message": "Authentifizierung fehlgeschlagen. Bitte überprüfen Sie Benutzername und Passwort."
+  },
+  "setupErrorNoEndpoint": {
+    "message": "Kein WebDAV-Endpunkt unter der angegebenen Server-URL gefunden.\nGeben Sie die vollständige Endpunkt-URL direkt ein (z. B. https://cloud.example.com/remote.php/dav/files/user/)."
+  },
+  "configTitle": {
+    "message": "WebDAV-Einstellungen"
+  },
+  "configLabelConnName": {
+    "message": "Verbindungsname"
+  },
+  "configHintConnName": {
+    "message": "Bezeichnung im Speicher-Auswahlfenster."
+  },
+  "configLabelUrl": {
+    "message": "WebDAV-Endpunkt-URL"
+  },
+  "configHintUrl": {
+    "message": "Vollständige URL mit Pfad, z. B. https://cloud.example.com/remote.php/dav/files/alice/"
+  },
+  "configLabelUsername": {
+    "message": "Benutzername"
+  },
+  "configLabelPassword": {
+    "message": "Passwort"
+  },
+  "configLabelPollInterval": {
+    "message": "Änderungserkennungsintervall (Sekunden)"
+  },
+  "configHintPollInterval": {
+    "message": "Wie oft der Server auf externe Änderungen geprüft wird. 0 zum Deaktivieren."
+  },
+  "configBtnSave": {
+    "message": "Speichern"
+  },
+  "configBtnTest": {
+    "message": "Verbindung testen"
+  },
+  "configStatusTesting": {
+    "message": "Teste…"
+  },
+  "configStatusAuthFailed": {
+    "message": "Authentifizierung fehlgeschlagen."
+  },
+  "configStatusOk": {
+    "message": "Verbindung erfolgreich."
+  },
+  "configStatusHttpError": {
+    "message": "Server hat HTTP $STATUS$ zurückgegeben.",
+    "placeholders": {
+      "status": {
+        "content": "$1"
+      }
+    }
+  },
+  "configStatusSaveFailed": {
+    "message": "Einstellungen konnten nicht gespeichert werden."
+  },
+  "configStatusSaved": {
+    "message": "Einstellungen gespeichert."
+  },
+  "fallbackConnName": {
+    "message": "WebDAV ($USER$)",
+    "placeholders": {
+      "user": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorUnknownConnection": {
+    "message": "Unbekannte Verbindung"
+  },
+  "errorFolderExists": {
+    "message": "Ordner existiert bereits"
+  },
+  "errorFileExists": {
+    "message": "Datei existiert bereits"
+  },
+  "errorHttp": {
+    "message": "WebDAV HTTP $STATUS$",
+    "placeholders": {
+      "status": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorConflictTitle": {
+    "message": "Konflikt"
+  },
+  "errorConflictDescription": {
+    "message": "Das übergeordnete Verzeichnis existiert nicht auf dem Server."
+  },
+  "errorHttpTitle": {
+    "message": "Serverfehler ($STATUS$)",
+    "placeholders": {
+      "status": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorHttpDescription": {
+    "message": "Der WebDAV-Server hat eine unerwartete HTTP-$STATUS$-Antwort zurückgegeben.",
+    "placeholders": {
+      "status": {
+        "content": "$1"
+      }
+    }
+  },
+  "setupReuseLabel": {
+    "message": "Vorhandenes Konto verwenden"
+  },
+  "setupReuseNew": {
+    "message": "- Neues Konto erstellen -"
+  },
+  "optionsPageTitle": {
+    "message": "WebDAV-Konten & Verbindungen"
+  },
+  "optionsPageSubtitle": {
+    "message": "WebDAV-Konten und die zugehörigen Add-on-Verbindungen verwalten."
+  },
+  "optionsAccountsHeading": {
+    "message": "Konten"
+  },
+  "optionsThAccount": {
+    "message": "Konto"
+  },
+  "optionsAccountsEmpty": {
+    "message": "Keine Konten vorhanden."
+  },
+  "optionsBtnAddAccount": {
+    "message": "Konto hinzufügen"
+  },
+  "optionsAddAccountTitle": {
+    "message": "WebDAV-Konto hinzufügen"
+  },
+  "optionsLabelAccountName": {
+    "message": "Kontoname"
+  },
+  "optionsAccountNotice": {
+    "message": "Konten können hier vorab erstellt oder von einem Add-on während der Einrichtung hinzugefügt werden. Add-ons können beim Verbinden ein vorhandenes Konto wiederverwenden. Das Entfernen eines Kontos löscht die gespeicherten Anmeldedaten und widerruft den Zugriff für alle Verbindungen, die dieses Konto nutzen."
+  },
+  "btnDelete": {
+    "message": "Löschen"
+  },
+  "optionsGrantedHeading": {
+    "message": "Aktive Verbindungen"
+  },
+  "optionsThConnection": {
+    "message": "Verbindung"
+  },
+  "btnRevoke": {
+    "message": "Widerrufen"
+  },
+  "optionsEmptyState": {
+    "message": "Keine aktiven Verbindungen."
+  },
+  "optionsNotice": {
+    "message": "Das Widerrufen einer Verbindung entzieht dem Add-on den Zugriff auf das zugehörige Konto bei diesem Anbieter."
+  },
+  "optionsErrorAccountExists": {
+    "message": "Für diesen Server und Benutzernamen existiert bereits ein Konto."
+  },
+  "optionsConnAccount": {
+    "message": "Kontoname:"
+  },
+  "optionsConnExtension": {
+    "message": "Add-on-Name:"
+  },
+  "optionsPlaceholderAccountName": {
+    "message": "Persönliches WebDAV-Konto"
+  }
+}
