@@ -360,6 +360,7 @@ class WebDavProvider extends VfsProviderImplementation {
       headers: { 'Authorization': _authHeader(account), ...extraHeaders },
       body,
       signal,
+      cache: 'no-store',
     });
   }
 
