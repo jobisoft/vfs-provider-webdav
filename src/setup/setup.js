@@ -1,7 +1,7 @@
 import * as vfs from '../vendor/vfs-provider.mjs';
 import { localizeDocument } from '../vendor/i18n.mjs';
 import { discover } from '../webdav-discover.mjs';
-import { accountKey, credKey, loadAccounts } from '../webdav-storage.mjs';
+import { accountKey, connectionKey, loadAccounts } from '../webdav-storage.mjs';
 
 const i18n = (key, subs) => browser.i18n.getMessage(key, subs);
 
@@ -88,7 +88,7 @@ connectBtn.addEventListener('click', async () => {
       || acc?.name
       || i18n('fallbackConnName', [acc?.username ?? '']);
     await browser.storage.local.set({
-      [credKey(storageId)]: { accountId: finalAccountId },
+      [connectionKey(storageId)]: { accountId: finalAccountId },
     });
   } else {
     // Discover endpoint, then reuse a matching account or create a new one.
@@ -104,7 +104,7 @@ connectBtn.addEventListener('click', async () => {
       if (matching) {
         finalAccountId = matching.accountId;
         await browser.storage.local.set({
-          [credKey(storageId)]: { accountId: finalAccountId },
+          [connectionKey(storageId)]: { accountId: finalAccountId },
         });
       } else {
         finalAccountId = crypto.randomUUID();
@@ -116,7 +116,7 @@ connectBtn.addEventListener('click', async () => {
             name,
             pollInterval: 60,
           },
-          [credKey(storageId)]: { accountId: finalAccountId },
+          [connectionKey(storageId)]: { accountId: finalAccountId },
         });
       }
     } catch (e) {

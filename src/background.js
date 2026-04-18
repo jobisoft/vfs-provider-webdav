@@ -16,7 +16,7 @@
  */
 
 import { VfsProviderImplementation } from './vendor/vfs-provider.mjs';
-import { CRED_PREFIX, accountKey, credKey } from './webdav-storage.mjs';
+import { CONNECTION_PREFIX, accountKey, connectionKey } from './webdav-storage.mjs';
 
 // ── HTTP utilities ────────────────────────────────────────────────────────────
 
@@ -162,7 +162,7 @@ class WebDavProvider extends VfsProviderImplementation {
 
   /** Returns the account for a storageId, including its accountId. */
   async #account(storageId) {
-    const connKey = credKey(storageId);
+    const connKey = connectionKey(storageId);
     const conn = (await browser.storage.local.get(connKey))[connKey];
     if (!conn?.accountId) throw Object.assign(
       new Error(browser.i18n.getMessage('errorUnknownConnection')), { code: 'E:AUTH' }
@@ -176,8 +176,8 @@ class WebDavProvider extends VfsProviderImplementation {
   async #allStorageIdsForAccount(accountId) {
     const all = await browser.storage.local.get(null);
     return Object.entries(all)
-      .filter(([k, v]) => k.startsWith(CRED_PREFIX) && v?.accountId === accountId)
-      .map(([k]) => k.slice(CRED_PREFIX.length));
+      .filter(([k, v]) => k.startsWith(CONNECTION_PREFIX) && v?.accountId === accountId)
+      .map(([k]) => k.slice(CONNECTION_PREFIX.length));
   }
 
   // ── Polling / external change detection ──────────────────────────────────
@@ -667,18 +667,28 @@ provider.init();
 browser.storage.local.get(null).then(all => {
   const accountIds = new Set();
   for (const [key, val] of Object.entries(all)) {
-    if (key.startsWith(CRED_PREFIX) && val?.accountId)
+    if (key.startsWith(CONNECTION_PREFIX) && val?.accountId)
       accountIds.add(val.accountId);
   }
   for (const accountId of accountIds)
     provider.startPoll(accountId);
 });
 
+// When a connection is removed via the VFS file picker (deleteConnection
+// command), clean up the connection-to-account mapping so subsequent file
+// operations for this storageId fail with E:AUTH. Only the mapping
+// (`webdav-conn-{storageId}`) is removed — the shared account is untouched.
+browser.runtime.onMessage.addListener((msg) => {
+  if (msg?.type === 'vfs-toolkit-remove-connection' && msg.storageId) {
+    browser.storage.local.remove(connectionKey(msg.storageId));
+  }
+});
+
 // React to connections being added or removed.
 browser.storage.onChanged.addListener((changes, area) => {
   if (area !== 'local') return;
   for (const [key, { oldValue, newValue }] of Object.entries(changes)) {
-    if (!key.startsWith(CRED_PREFIX)) continue;
+    if (!key.startsWith(CONNECTION_PREFIX)) continue;
     if (newValue?.accountId) provider.startPoll(newValue.accountId);
     else if (oldValue?.accountId) provider.stopPoll(oldValue.accountId);
   }

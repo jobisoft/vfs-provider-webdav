@@ -1,6 +1,6 @@
 import { localizeDocument } from '../vendor/i18n.mjs';
 import { discover } from '../webdav-discover.mjs';
-import { ACCOUNT_PREFIX, CRED_PREFIX, loadAccounts } from '../webdav-storage.mjs';
+import { ACCOUNT_PREFIX, CONNECTION_PREFIX, loadAccounts } from '../webdav-storage.mjs';
 
 localizeDocument();
 
@@ -10,7 +10,7 @@ const CONNECTIONS_KEY = 'vfs-toolkit-connections';
 async function render() {
   const storage = await browser.storage.local.get(null);
   const connections = (storage[CONNECTIONS_KEY] ?? []).filter(
-    c => storage[CRED_PREFIX + c.storageId] != null
+    c => storage[CONNECTION_PREFIX + c.storageId] != null
   );
   renderAccounts(loadAccounts(storage), connections, storage);
   renderConnections(connections, storage);
@@ -30,7 +30,7 @@ function renderAccounts(accounts, connections, storage) {
 
   for (const account of accounts) {
     const accountConns = connections.filter(
-      c => storage[CRED_PREFIX + c.storageId]?.accountId === account.accountId
+      c => storage[CONNECTION_PREFIX + c.storageId]?.accountId === account.accountId
     );
 
     const tdAccount = document.createElement('td');
@@ -82,7 +82,7 @@ function renderConnections(connections, storage) {
     btn.textContent = browser.i18n.getMessage('btnRevoke');
     btn.addEventListener('click', () => revokeAccess(conn.addonId, conn.storageId));
 
-    const accountId = storage[CRED_PREFIX + conn.storageId]?.accountId;
+    const accountId = storage[CONNECTION_PREFIX + conn.storageId]?.accountId;
     const accountName = accountId ? (storage[ACCOUNT_PREFIX + accountId]?.name ?? '\u2014') : '\u2014';
 
     const tdConn = document.createElement('td');
@@ -113,7 +113,7 @@ async function deleteAccount(accountId, connections) {
 
   // Remove stored credential entries and the account itself.
   await browser.storage.local.remove([
-    ...storageIds.map(id => CRED_PREFIX + id),
+    ...storageIds.map(id => CONNECTION_PREFIX + id),
     ACCOUNT_PREFIX + accountId,
   ]);
 
@@ -137,7 +137,7 @@ async function revokeAccess(addonId, storageId) {
   await browser.storage.local.set({ [CONNECTIONS_KEY]: updated });
 
   // Remove stored WebDAV credentials for this connection.
-  await browser.storage.local.remove(CRED_PREFIX + storageId);
+  await browser.storage.local.remove(CONNECTION_PREFIX + storageId);
 
   // Notify the add-on so it can update its UI.
   browser.runtime.sendMessage(addonId, {
@@ -153,7 +153,7 @@ render();
 browser.storage.onChanged.addListener((changes, area) => {
   if (area !== 'local') return;
   const relevant = Object.keys(changes).some(k =>
-    k === CONNECTIONS_KEY || k.startsWith(ACCOUNT_PREFIX) || k.startsWith(CRED_PREFIX)
+    k === CONNECTIONS_KEY || k.startsWith(ACCOUNT_PREFIX) || k.startsWith(CONNECTION_PREFIX)
   );
   if (relevant) render();
 });

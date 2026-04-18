@@ -1,7 +1,7 @@
 export const ACCOUNT_PREFIX = 'webdav-account-';
-export const CRED_PREFIX = 'webdav-conn-';
+export const CONNECTION_PREFIX = 'webdav-conn-';
 export const accountKey = id => ACCOUNT_PREFIX + id;
-export const credKey = id => CRED_PREFIX + id;
+export const connectionKey = id => CONNECTION_PREFIX + id;
 
 /**
  * Returns all stored accounts from a full storage snapshot.

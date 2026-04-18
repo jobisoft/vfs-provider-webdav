@@ -1,6 +1,6 @@
 import * as vfs from '../vendor/vfs-provider.mjs';
 import { localizeDocument } from '../vendor/i18n.mjs';
-import { accountKey, credKey } from '../webdav-storage.mjs';
+import { accountKey, connectionKey } from '../webdav-storage.mjs';
 
 const i18n = (key, subs) => browser.i18n.getMessage(key, subs);
 const CONNECTIONS_KEY = 'vfs-toolkit-connections';
@@ -20,7 +20,7 @@ const cancelBtn   = document.getElementById('cancel-btn');
 const statusEl    = document.getElementById('status');
 
 const storage = await browser.storage.local.get(null);
-const { accountId } = storage[credKey(storageId)] ?? {};
+const { accountId } = storage[connectionKey(storageId)] ?? {};
 const account = (accountId && storage[accountKey(accountId)]) || {};
 const conn = (storage[CONNECTIONS_KEY] ?? []).find(c => c.storageId === storageId) ?? {};
 
