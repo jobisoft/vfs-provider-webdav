@@ -27,6 +27,21 @@
       color: #1e293b;
     }
 
+    .panel {
+      padding: 14px 16px 16px;
+      margin-bottom: 16px;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      background: white;
+    }
+
+    .panel h3 {
+      margin: 0 0 12px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #0f172a;
+    }
+
     label {
       display: block;
       font-weight: 500;
@@ -34,10 +49,7 @@
       color: #334155;
     }
 
-    input[type="text"],
-    input[type="url"],
-    input[type="password"],
-    input[type="number"] {
+    input[type="text"] {
       width: 100%;
       padding: 6px 8px;
       border: 1px solid #cbd5e1;
@@ -55,7 +67,33 @@
     .hint {
       font-size: 11px;
       color: #94a3b8;
-      margin: 0 0 12px;
+      margin: 0 0 4px;
+    }
+
+    .account-field {
+      margin-bottom: 10px;
+    }
+
+    .account-field:last-of-type {
+      margin-bottom: 14px;
+    }
+
+    .account-field-label {
+      font-size: 11px;
+      font-weight: 500;
+      color: #64748b;
+      margin-bottom: 2px;
+    }
+
+    .account-field-value {
+      color: #0f172a;
+      font-size: 13px;
+      word-break: break-all;
+    }
+
+    .account-field-value.mono {
+      font-family: monospace;
+      font-size: 12px;
     }
 
     .row {
@@ -121,28 +159,33 @@
 <body>
   <h2 data-i18n-content="configTitle"></h2>
 
-  <label for="conn-name" data-i18n-content="configLabelConnName"></label>
-  <input id="conn-name" type="text" />
-  <p class="hint" data-i18n-content="configHintConnName"></p>
+  <section class="panel">
+    <h3 data-i18n-content="configSectionConnection"></h3>
+    <label for="conn-name" data-i18n-content="configLabelConnName"></label>
+    <input id="conn-name" type="text" />
+    <p class="hint" data-i18n-content="configHintConnName"></p>
+  </section>
 
-  <label for="url" data-i18n-content="configLabelUrl"></label>
-  <input id="url" type="url" spellcheck="false" autocomplete="off" />
-  <p class="hint" data-i18n-content="configHintUrl"></p>
-
-  <label for="username" data-i18n-content="configLabelUsername"></label>
-  <input id="username" type="text" autocomplete="username" />
-
-  <label for="password" data-i18n-content="configLabelPassword"></label>
-  <input id="password" type="password" autocomplete="current-password" />
-
-  <label for="poll-interval" data-i18n-content="configLabelPollInterval"></label>
-  <input id="poll-interval" type="number" min="0" max="3600" step="10" />
-  <p class="hint" data-i18n-content="configHintPollInterval"></p>
+  <section class="panel">
+    <h3 data-i18n-content="configSectionAccount"></h3>
+    <div class="account-field">
+      <div class="account-field-label" data-i18n-content="optionsLabelAccountName"></div>
+      <div class="account-field-value" id="acc-name"></div>
+    </div>
+    <div class="account-field">
+      <div class="account-field-label" data-i18n-content="configLabelUrl"></div>
+      <div class="account-field-value mono" id="acc-url"></div>
+    </div>
+    <div class="account-field">
+      <div class="account-field-label" data-i18n-content="configLabelUsername"></div>
+      <div class="account-field-value" id="acc-username"></div>
+    </div>
+    <button class="secondary" id="manage-accounts-btn" data-i18n-content="configBtnManageAccounts"></button>
+  </section>
 
   <div id="status"></div>
 
   <div class="row">
-    <button class="secondary" id="test-btn" data-i18n-content="configBtnTest"></button>
     <button id="save-btn" data-i18n-content="configBtnSave"></button>
     <button class="cancel" id="cancel-btn" data-i18n-content="setupBtnCancel"></button>
   </div>

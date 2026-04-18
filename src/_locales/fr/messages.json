@@ -50,6 +50,15 @@
   "configTitle": {
     "message": "Paramètres WebDAV"
   },
+  "configSectionConnection": {
+    "message": "Connexion"
+  },
+  "configSectionAccount": {
+    "message": "Compte"
+  },
+  "configBtnManageAccounts": {
+    "message": "Gérer les comptes"
+  },
   "configLabelConnName": {
     "message": "Nom de la connexion"
   },
@@ -59,14 +68,8 @@
   "configLabelUrl": {
     "message": "URL du point d'accès WebDAV"
   },
-  "configHintUrl": {
-    "message": "URL complète avec chemin, ex. : https://cloud.example.com/remote.php/dav/files/alice/"
-  },
   "configLabelUsername": {
     "message": "Nom d'utilisateur"
-  },
-  "configLabelPassword": {
-    "message": "Mot de passe"
   },
   "configLabelPollInterval": {
     "message": "Intervalle de détection des modifications (secondes)"
@@ -76,26 +79,6 @@
   },
   "configBtnSave": {
     "message": "Enregistrer"
-  },
-  "configBtnTest": {
-    "message": "Tester la connexion"
-  },
-  "configStatusTesting": {
-    "message": "Test en cours…"
-  },
-  "configStatusAuthFailed": {
-    "message": "Échec de l'authentification."
-  },
-  "configStatusOk": {
-    "message": "Connexion réussie."
-  },
-  "configStatusHttpError": {
-    "message": "Le serveur a renvoyé HTTP $STATUS$.",
-    "placeholders": {
-      "status": {
-        "content": "$1"
-      }
-    }
   },
   "configStatusSaveFailed": {
     "message": "Impossible d'enregistrer les paramètres."
@@ -176,6 +159,15 @@
   },
   "optionsAddAccountTitle": {
     "message": "Ajouter un compte WebDAV"
+  },
+  "optionsBtnEdit": {
+    "message": "Modifier"
+  },
+  "optionsEditAccountTitle": {
+    "message": "Modifier le compte WebDAV"
+  },
+  "optionsBtnSaveAccount": {
+    "message": "Enregistrer"
   },
   "optionsLabelAccountName": {
     "message": "Nom du compte"

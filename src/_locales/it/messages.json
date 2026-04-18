@@ -50,6 +50,15 @@
   "configTitle": {
     "message": "Impostazioni WebDAV"
   },
+  "configSectionConnection": {
+    "message": "Connessione"
+  },
+  "configSectionAccount": {
+    "message": "Account"
+  },
+  "configBtnManageAccounts": {
+    "message": "Gestisci account"
+  },
   "configLabelConnName": {
     "message": "Nome della connessione"
   },
@@ -59,14 +68,8 @@
   "configLabelUrl": {
     "message": "URL endpoint WebDAV"
   },
-  "configHintUrl": {
-    "message": "URL completo con percorso, es. https://cloud.example.com/remote.php/dav/files/alice/"
-  },
   "configLabelUsername": {
     "message": "Nome utente"
-  },
-  "configLabelPassword": {
-    "message": "Password"
   },
   "configLabelPollInterval": {
     "message": "Intervallo di rilevamento modifiche (secondi)"
@@ -76,26 +79,6 @@
   },
   "configBtnSave": {
     "message": "Salva"
-  },
-  "configBtnTest": {
-    "message": "Testa connessione"
-  },
-  "configStatusTesting": {
-    "message": "Test in corso…"
-  },
-  "configStatusAuthFailed": {
-    "message": "Autenticazione non riuscita."
-  },
-  "configStatusOk": {
-    "message": "Connessione riuscita."
-  },
-  "configStatusHttpError": {
-    "message": "Il server ha restituito HTTP $STATUS$.",
-    "placeholders": {
-      "status": {
-        "content": "$1"
-      }
-    }
   },
   "configStatusSaveFailed": {
     "message": "Impossibile salvare le impostazioni."
@@ -176,6 +159,15 @@
   },
   "optionsAddAccountTitle": {
     "message": "Aggiungi account WebDAV"
+  },
+  "optionsBtnEdit": {
+    "message": "Modifica"
+  },
+  "optionsEditAccountTitle": {
+    "message": "Modifica account WebDAV"
+  },
+  "optionsBtnSaveAccount": {
+    "message": "Salva"
   },
   "optionsLabelAccountName": {
     "message": "Nome account"

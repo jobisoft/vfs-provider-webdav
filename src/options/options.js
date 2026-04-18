@@ -44,13 +44,18 @@ function renderAccounts(accounts, connections, storage) {
       tdAccount.appendChild(detail);
     }
 
+    const editBtn = document.createElement('button');
+    editBtn.className = 'edit-btn';
+    editBtn.textContent = browser.i18n.getMessage('optionsBtnEdit');
+    editBtn.addEventListener('click', () => openEditPopover(account));
+
     const btn = document.createElement('button');
     btn.className = 'revoke-btn';
     btn.textContent = browser.i18n.getMessage('btnDelete');
     btn.addEventListener('click', () => deleteAccount(account.accountId, accountConns));
 
     const tdAction = document.createElement('td');
-    tdAction.appendChild(btn);
+    tdAction.append(editBtn, btn);
 
     const tr = document.createElement('tr');
     tr.append(tdAccount, tdAction);
@@ -155,14 +160,18 @@ browser.storage.onChanged.addListener((changes, area) => {
 
 // ── Add-account popover ───────────────────────────────────────────────────────
 
-const popover     = document.getElementById('add-account-popover');
-const serverInput = document.getElementById('aa-server');
-const userInput   = document.getElementById('aa-username');
-const passInput   = document.getElementById('aa-password');
-const testBtn     = document.getElementById('aa-test-btn');
-const statusEl    = document.getElementById('aa-status');
-const nameInput   = document.getElementById('aa-name');
-const cancelBtn   = document.getElementById('aa-cancel-btn');
+const popover      = document.getElementById('add-account-popover');
+const popoverTitle = popover.querySelector('h3');
+const serverInput  = document.getElementById('aa-server');
+const userInput    = document.getElementById('aa-username');
+const passInput    = document.getElementById('aa-password');
+const pollInput    = document.getElementById('aa-poll');
+const testBtn      = document.getElementById('aa-test-btn');
+const statusEl     = document.getElementById('aa-status');
+const nameInput    = document.getElementById('aa-name');
+const cancelBtn    = document.getElementById('aa-cancel-btn');
+
+let editingAccountId = null;
 
 function setStatus(msg, type = '') {
   statusEl.textContent = msg;
@@ -174,8 +183,25 @@ function resetPopover() {
   userInput.value = '';
   passInput.value = '';
   nameInput.value = '';
+  pollInput.value = 60;
   setStatus('');
   testBtn.disabled = false;
+  editingAccountId = null;
+  popoverTitle.textContent = browser.i18n.getMessage('optionsAddAccountTitle');
+  testBtn.textContent = browser.i18n.getMessage('optionsBtnAddAccount');
+}
+
+function openEditPopover(account) {
+  resetPopover();
+  editingAccountId = account.accountId;
+  serverInput.value = account.url ?? '';
+  userInput.value = account.username ?? '';
+  passInput.value = account.password ?? '';
+  nameInput.value = account.name ?? '';
+  pollInput.value = account.pollInterval ?? 60;
+  popoverTitle.textContent = browser.i18n.getMessage('optionsEditAccountTitle');
+  testBtn.textContent = browser.i18n.getMessage('optionsBtnSaveAccount');
+  popover.showPopover();
 }
 
 document.getElementById('add-account-btn').addEventListener('click', () => {
@@ -207,7 +233,7 @@ testBtn.addEventListener('click', async () => {
 
     const storage = await browser.storage.local.get(null);
     const matching = loadAccounts(storage).find(
-      a => a.url === url && a.username === userInput.value
+      a => a.url === url && a.username === userInput.value && a.accountId !== editingAccountId
     );
 
     if (matching) {
@@ -216,14 +242,14 @@ testBtn.addEventListener('click', async () => {
       return;
     }
 
-    const accountId = crypto.randomUUID();
+    const accountId = editingAccountId ?? crypto.randomUUID();
     await browser.storage.local.set({
       [ACCOUNT_PREFIX + accountId]: {
         url,
         username: userInput.value,
         password: passInput.value,
         name: nameInput.value.trim() || `${userInput.value}@${new URL(url).hostname}`,
-        pollInterval: 60,
+        pollInterval: Math.max(0, parseInt(pollInput.value, 10) || 0),
       },
     });
     popover.hidePopover();

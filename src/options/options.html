@@ -109,6 +109,12 @@
       vertical-align: middle;
     }
 
+    #accounts-table td:last-child,
+    #connections-table td:last-child {
+      text-align: right;
+      white-space: nowrap;
+    }
+
     tr:last-child td {
       border-bottom: none;
     }
@@ -143,6 +149,23 @@
 
     .revoke-btn:hover {
       background: #fef2f2;
+    }
+
+    .edit-btn {
+      padding: 4px 12px;
+      background: #fff;
+      border: 1px solid #cbd5e1;
+      color: #475569;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 500;
+      transition: background 0.15s;
+      margin-right: 6px;
+    }
+
+    .edit-btn:hover {
+      background: #f1f5f9;
     }
 
     .add-btn {
@@ -306,6 +329,12 @@
       background: #e2e8f0;
     }
 
+    #add-account-popover .aa-hint {
+      font-size: 11px;
+      color: #94a3b8;
+      margin: -8px 0 12px;
+    }
+
     #aa-status {
       font-size: 12px;
       min-height: 16px;
@@ -420,6 +449,10 @@
 
     <label for="aa-password" data-i18n-content="setupLabelPassword"></label>
     <input id="aa-password" type="password" autocomplete="current-password" />
+
+    <label for="aa-poll" data-i18n-content="configLabelPollInterval"></label>
+    <input id="aa-poll" type="number" min="0" max="3600" step="10" />
+    <p class="aa-hint" data-i18n-content="configHintPollInterval"></p>
 
     <div id="aa-status"></div>
 

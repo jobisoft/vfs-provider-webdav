@@ -50,6 +50,15 @@
   "configTitle": {
     "message": "Nastavení WebDAV"
   },
+  "configSectionConnection": {
+    "message": "Připojení"
+  },
+  "configSectionAccount": {
+    "message": "Účet"
+  },
+  "configBtnManageAccounts": {
+    "message": "Spravovat účty"
+  },
   "configLabelConnName": {
     "message": "Název připojení"
   },
@@ -59,14 +68,8 @@
   "configLabelUrl": {
     "message": "URL koncového bodu WebDAV"
   },
-  "configHintUrl": {
-    "message": "Úplná URL včetně cesty, např. https://cloud.example.com/remote.php/dav/files/alice/"
-  },
   "configLabelUsername": {
     "message": "Uživatelské jméno"
-  },
-  "configLabelPassword": {
-    "message": "Heslo"
   },
   "configLabelPollInterval": {
     "message": "Interval zjišťování změn (sekundy)"
@@ -76,26 +79,6 @@
   },
   "configBtnSave": {
     "message": "Uložit"
-  },
-  "configBtnTest": {
-    "message": "Otestovat připojení"
-  },
-  "configStatusTesting": {
-    "message": "Testování…"
-  },
-  "configStatusAuthFailed": {
-    "message": "Ověření selhalo."
-  },
-  "configStatusOk": {
-    "message": "Připojení úspěšné."
-  },
-  "configStatusHttpError": {
-    "message": "Server vrátil HTTP $STATUS$.",
-    "placeholders": {
-      "status": {
-        "content": "$1"
-      }
-    }
   },
   "configStatusSaveFailed": {
     "message": "Nastavení se nepodařilo uložit."
@@ -176,6 +159,15 @@
   },
   "optionsAddAccountTitle": {
     "message": "Přidat účet WebDAV"
+  },
+  "optionsBtnEdit": {
+    "message": "Upravit"
+  },
+  "optionsEditAccountTitle": {
+    "message": "Upravit účet WebDAV"
+  },
+  "optionsBtnSaveAccount": {
+    "message": "Uložit"
   },
   "optionsLabelAccountName": {
     "message": "Název účtu"

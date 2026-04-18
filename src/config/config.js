@@ -1,103 +1,54 @@
+import * as vfs from '../vendor/vfs-provider.mjs';
 import { localizeDocument } from '../vendor/i18n.mjs';
 import { accountKey, credKey } from '../webdav-storage.mjs';
 
 const i18n = (key, subs) => browser.i18n.getMessage(key, subs);
+const CONNECTIONS_KEY = 'vfs-toolkit-connections';
 
 localizeDocument();
 
 const params = new URLSearchParams(location.search);
 const storageId = params.get('storageId');
-const CRED_KEY = credKey(storageId);
 
-const PROPFIND_BODY = `<?xml version="1.0" encoding="utf-8"?>
-<D:propfind xmlns:D="DAV:"><D:prop><D:resourcetype/></D:prop></D:propfind>`;
+const nameInput   = document.getElementById('conn-name');
+const accNameEl   = document.getElementById('acc-name');
+const accUrlEl    = document.getElementById('acc-url');
+const accUserEl   = document.getElementById('acc-username');
+const manageBtn   = document.getElementById('manage-accounts-btn');
+const saveBtn     = document.getElementById('save-btn');
+const cancelBtn   = document.getElementById('cancel-btn');
+const statusEl    = document.getElementById('status');
 
-// ── UI refs ───────────────────────────────────────────────────────────────────
+const storage = await browser.storage.local.get(null);
+const { accountId } = storage[credKey(storageId)] ?? {};
+const account = (accountId && storage[accountKey(accountId)]) || {};
+const conn = (storage[CONNECTIONS_KEY] ?? []).find(c => c.storageId === storageId) ?? {};
 
-const nameInput = document.getElementById('conn-name');
-const urlInput = document.getElementById('url');
-const userInput = document.getElementById('username');
-const passInput = document.getElementById('password');
-const pollInput = document.getElementById('poll-interval');
-const saveBtn   = document.getElementById('save-btn');
-const testBtn   = document.getElementById('test-btn');
-const cancelBtn = document.getElementById('cancel-btn');
-const statusEl  = document.getElementById('status');
-
-// ── Load existing settings ────────────────────────────────────────────────────
-
-const connRv = await browser.storage.local.get(CRED_KEY);
-const { accountId } = connRv[CRED_KEY] ?? {};
-
-const ACCOUNT_KEY = accountId ? accountKey(accountId) : null;
-const accRv = ACCOUNT_KEY ? await browser.storage.local.get(ACCOUNT_KEY) : {};
-const account = (ACCOUNT_KEY ? accRv[ACCOUNT_KEY] : null) ?? {};
-
-nameInput.value = account.name ?? '';
-urlInput.value = account.url ?? '';
-userInput.value = account.username ?? '';
-passInput.value = account.password ?? '';
-pollInput.value = account.pollInterval ?? 60;
+nameInput.value = conn.name ?? '';
+accNameEl.textContent = account.name ?? '\u2014';
+accUrlEl.textContent  = account.url ?? '\u2014';
+accUserEl.textContent = account.username ?? '\u2014';
 
 cancelBtn.addEventListener('click', () => window.close());
-
-// ── Status display ────────────────────────────────────────────────────────────
+manageBtn.addEventListener('click', () => {
+  browser.runtime.openOptionsPage();
+  window.close();
+});
 
 function setStatus(msg, type = '') {
   statusEl.textContent = msg;
   statusEl.className = type;
 }
 
-// ── Event handlers ────────────────────────────────────────────────────────────
-
-testBtn.addEventListener('click', async () => {
-  testBtn.disabled = true;
-  setStatus(i18n('configStatusTesting'), 'info');
-  try {
-    let url = urlInput.value.trim();
-    if (!url.endsWith('/')) url += '/';
-    const auth = 'Basic ' + btoa(`${userInput.value}:${passInput.value}`);
-    const resp = await fetch(url, {
-      method: 'PROPFIND',
-      headers: {
-        'Authorization': auth,
-        'Depth': '0',
-        'Content-Type': 'application/xml; charset="utf-8"',
-      },
-      body: PROPFIND_BODY,
-    });
-    if (resp.status === 401 || resp.status === 403) throw new Error(i18n('configStatusAuthFailed'));
-    if (resp.ok || resp.status === 207) setStatus(i18n('configStatusOk'), 'ok');
-    else throw new Error(i18n('configStatusHttpError', [resp.status]));
-  } catch (e) {
-    setStatus(e.message, 'error');
-  } finally {
-    testBtn.disabled = false;
-  }
-});
-
 saveBtn.addEventListener('click', async () => {
-  if (!ACCOUNT_KEY) return;
+  if (!conn.addonId) { window.close(); return; }
+  const newName = nameInput.value.trim() || i18n('fallbackConnName', [account.username ?? '']);
+  if (newName === conn.name) { window.close(); return; }
   saveBtn.disabled = true;
   try {
-    let url = urlInput.value.trim();
-    if (url && !url.endsWith('/')) url += '/';
-
-    const pollInterval = Math.max(0, parseInt(pollInput.value, 10) || 0);
-    const name = nameInput.value.trim() || i18n('fallbackConnName', [userInput.value]);
-
-    await browser.storage.local.set({
-      [ACCOUNT_KEY]: {
-        url,
-        username: userInput.value,
-        password: passInput.value,
-        name,
-        pollInterval,
-      },
-    });
-
+    await vfs.reportNewConnection(conn.addonId, conn.addonName, storageId, newName, conn.capabilities);
     setStatus(i18n('configStatusSaved'), 'ok');
-    setTimeout(() => window.close(), 800);
+    setTimeout(() => window.close(), 600);
   } catch {
     setStatus(i18n('configStatusSaveFailed'), 'error');
     saveBtn.disabled = false;

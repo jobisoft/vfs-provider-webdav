@@ -50,6 +50,15 @@
   "configTitle": {
     "message": "WebDAV beállítások"
   },
+  "configSectionConnection": {
+    "message": "Kapcsolat"
+  },
+  "configSectionAccount": {
+    "message": "Fiók"
+  },
+  "configBtnManageAccounts": {
+    "message": "Fiókok kezelése"
+  },
   "configLabelConnName": {
     "message": "Kapcsolat neve"
   },
@@ -59,14 +68,8 @@
   "configLabelUrl": {
     "message": "WebDAV-végpont URL"
   },
-  "configHintUrl": {
-    "message": "Teljes URL az elérési úttal, pl. https://cloud.example.com/remote.php/dav/files/alice/"
-  },
   "configLabelUsername": {
     "message": "Felhasználónév"
-  },
-  "configLabelPassword": {
-    "message": "Jelszó"
   },
   "configLabelPollInterval": {
     "message": "Változásészlelési időköz (másodperc)"
@@ -76,26 +79,6 @@
   },
   "configBtnSave": {
     "message": "Mentés"
-  },
-  "configBtnTest": {
-    "message": "Kapcsolat tesztelése"
-  },
-  "configStatusTesting": {
-    "message": "Tesztelés…"
-  },
-  "configStatusAuthFailed": {
-    "message": "Hitelesítés sikertelen."
-  },
-  "configStatusOk": {
-    "message": "Kapcsolat sikeres."
-  },
-  "configStatusHttpError": {
-    "message": "A kiszolgáló HTTP $STATUS$ választ adott.",
-    "placeholders": {
-      "status": {
-        "content": "$1"
-      }
-    }
   },
   "configStatusSaveFailed": {
     "message": "A beállítások mentése sikertelen."
@@ -176,6 +159,15 @@
   },
   "optionsAddAccountTitle": {
     "message": "WebDAV-fiók hozzáadása"
+  },
+  "optionsBtnEdit": {
+    "message": "Szerkesztés"
+  },
+  "optionsEditAccountTitle": {
+    "message": "WebDAV-fiók szerkesztése"
+  },
+  "optionsBtnSaveAccount": {
+    "message": "Mentés"
   },
   "optionsLabelAccountName": {
     "message": "Fiók neve"

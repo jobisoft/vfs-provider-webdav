@@ -50,6 +50,15 @@
   "configTitle": {
     "message": "Настройки WebDAV"
   },
+  "configSectionConnection": {
+    "message": "Подключение"
+  },
+  "configSectionAccount": {
+    "message": "Аккаунт"
+  },
+  "configBtnManageAccounts": {
+    "message": "Управление аккаунтами"
+  },
   "configLabelConnName": {
     "message": "Имя подключения"
   },
@@ -59,14 +68,8 @@
   "configLabelUrl": {
     "message": "URL конечной точки WebDAV"
   },
-  "configHintUrl": {
-    "message": "Полный URL с путём, например https://cloud.example.com/remote.php/dav/files/alice/"
-  },
   "configLabelUsername": {
     "message": "Имя пользователя"
-  },
-  "configLabelPassword": {
-    "message": "Пароль"
   },
   "configLabelPollInterval": {
     "message": "Интервал обнаружения изменений (секунды)"
@@ -76,26 +79,6 @@
   },
   "configBtnSave": {
     "message": "Сохранить"
-  },
-  "configBtnTest": {
-    "message": "Проверить подключение"
-  },
-  "configStatusTesting": {
-    "message": "Проверка…"
-  },
-  "configStatusAuthFailed": {
-    "message": "Ошибка аутентификации."
-  },
-  "configStatusOk": {
-    "message": "Подключение успешно."
-  },
-  "configStatusHttpError": {
-    "message": "Сервер вернул HTTP $STATUS$.",
-    "placeholders": {
-      "status": {
-        "content": "$1"
-      }
-    }
   },
   "configStatusSaveFailed": {
     "message": "Не удалось сохранить настройки."
@@ -176,6 +159,15 @@
   },
   "optionsAddAccountTitle": {
     "message": "Добавить аккаунт WebDAV"
+  },
+  "optionsBtnEdit": {
+    "message": "Изменить"
+  },
+  "optionsEditAccountTitle": {
+    "message": "Изменить аккаунт WebDAV"
+  },
+  "optionsBtnSaveAccount": {
+    "message": "Сохранить"
   },
   "optionsLabelAccountName": {
     "message": "Имя аккаунта"

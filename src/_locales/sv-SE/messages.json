@@ -50,6 +50,15 @@
   "configTitle": {
     "message": "WebDAV-inställningar"
   },
+  "configSectionConnection": {
+    "message": "Anslutning"
+  },
+  "configSectionAccount": {
+    "message": "Konto"
+  },
+  "configBtnManageAccounts": {
+    "message": "Hantera konton"
+  },
   "configLabelConnName": {
     "message": "Anslutningsnamn"
   },
@@ -59,14 +68,8 @@
   "configLabelUrl": {
     "message": "WebDAV-slutpunktens URL"
   },
-  "configHintUrl": {
-    "message": "Fullständig URL med sökväg, t.ex. https://cloud.example.com/remote.php/dav/files/alice/"
-  },
   "configLabelUsername": {
     "message": "Användarnamn"
-  },
-  "configLabelPassword": {
-    "message": "Lösenord"
   },
   "configLabelPollInterval": {
     "message": "Ändringsdetekteringsintervall (sekunder)"
@@ -76,26 +79,6 @@
   },
   "configBtnSave": {
     "message": "Spara"
-  },
-  "configBtnTest": {
-    "message": "Testa anslutning"
-  },
-  "configStatusTesting": {
-    "message": "Testar…"
-  },
-  "configStatusAuthFailed": {
-    "message": "Autentisering misslyckades."
-  },
-  "configStatusOk": {
-    "message": "Anslutningen lyckades."
-  },
-  "configStatusHttpError": {
-    "message": "Servern returnerade HTTP $STATUS$.",
-    "placeholders": {
-      "status": {
-        "content": "$1"
-      }
-    }
   },
   "configStatusSaveFailed": {
     "message": "Det gick inte att spara inställningarna."
@@ -176,6 +159,15 @@
   },
   "optionsAddAccountTitle": {
     "message": "Lägg till WebDAV-konto"
+  },
+  "optionsBtnEdit": {
+    "message": "Redigera"
+  },
+  "optionsEditAccountTitle": {
+    "message": "Redigera WebDAV-konto"
+  },
+  "optionsBtnSaveAccount": {
+    "message": "Spara"
   },
   "optionsLabelAccountName": {
     "message": "Kontonamn"

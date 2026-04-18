@@ -50,6 +50,15 @@
   "configTitle": {
     "message": "WebDAV 設定"
   },
+  "configSectionConnection": {
+    "message": "接続"
+  },
+  "configSectionAccount": {
+    "message": "アカウント"
+  },
+  "configBtnManageAccounts": {
+    "message": "アカウントを管理"
+  },
   "configLabelConnName": {
     "message": "接続名"
   },
@@ -59,14 +68,8 @@
   "configLabelUrl": {
     "message": "WebDAV エンドポイント URL"
   },
-  "configHintUrl": {
-    "message": "パスを含む完全な URL（例: https://cloud.example.com/remote.php/dav/files/alice/）"
-  },
   "configLabelUsername": {
     "message": "ユーザー名"
-  },
-  "configLabelPassword": {
-    "message": "パスワード"
   },
   "configLabelPollInterval": {
     "message": "変更検出間隔（秒）"
@@ -76,26 +79,6 @@
   },
   "configBtnSave": {
     "message": "保存"
-  },
-  "configBtnTest": {
-    "message": "接続をテスト"
-  },
-  "configStatusTesting": {
-    "message": "テスト中…"
-  },
-  "configStatusAuthFailed": {
-    "message": "認証に失敗しました。"
-  },
-  "configStatusOk": {
-    "message": "接続に成功しました。"
-  },
-  "configStatusHttpError": {
-    "message": "サーバーが HTTP $STATUS$ を返しました。",
-    "placeholders": {
-      "status": {
-        "content": "$1"
-      }
-    }
   },
   "configStatusSaveFailed": {
     "message": "設定の保存に失敗しました。"
@@ -176,6 +159,15 @@
   },
   "optionsAddAccountTitle": {
     "message": "WebDAV アカウントを追加"
+  },
+  "optionsBtnEdit": {
+    "message": "編集"
+  },
+  "optionsEditAccountTitle": {
+    "message": "WebDAV アカウントを編集"
+  },
+  "optionsBtnSaveAccount": {
+    "message": "保存"
   },
   "optionsLabelAccountName": {
     "message": "アカウント名"
