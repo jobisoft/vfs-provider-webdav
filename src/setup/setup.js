@@ -10,6 +10,7 @@ localizeDocument();
 const params = new URLSearchParams(location.search);
 const addonId = params.get('addonId');
 const addonName = params.get('addonName');
+const setupToken = params.get('setupToken');
 
 const capabilities = {
   file: { read: true, add: true, modify: true, delete: true },
@@ -126,6 +127,6 @@ connectBtn.addEventListener('click', async () => {
     }
   }
 
-  await vfs.reportNewConnection(addonId, addonName, storageId, name, capabilities);
+  await vfs.reportNewConnection(addonId, addonName, storageId, name, capabilities, setupToken);
   window.close();
 });
